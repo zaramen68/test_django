@@ -1,11 +1,20 @@
 from rest_framework import serializers
-from .models import Article
+from .models import Article, Poll, Question
 
 
 class ArticleSerializer(serializers.ModelSerializer):
     class Meta:
         model = Article
         fields = ('id', 'title', 'description', 'body', 'author_id')
+
+
+class PollSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Poll
+        fields = ('id', 'title, description', 'body', 'timeOfBegin') 
+
+        
+               
     # title = serializers.CharField(max_length=120)
     # description = serializers.CharField()
     # body = serializers.CharField()

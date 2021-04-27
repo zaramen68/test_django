@@ -22,17 +22,19 @@ class Article(models.Model):
     return self.title
 
 class Poll(models.Model):
-
+  timeOfBegin = models.DateTimeField()
   title = models.CharField(max_length=120)
   description = models.TextField()
   body = models.TextField()
+  
 
-class Question(model.Model):
-  typeQ = models.
+class Question(models.Model):
+  typeQ = models.IntegerField()
   title = models.CharField(max_length=120)
   description = models.TextField()
   bodyText = models.TextField()
   bodyJson = models.JSONField()
+  polls = models.ManyToManyField(Poll)
 
 
     
