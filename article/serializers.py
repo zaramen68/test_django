@@ -17,7 +17,7 @@ class PollSerializer(serializers.ModelSerializer):
 class QuestionSerializer(serializers.ModelSerializer):
     class Meta:
         model = Question
-        fields = ('id', 'typeQ', 'title', 'description', 'bodyText', 'bodyJson', 'polls') 
+        fields = ('id', 'typeQ', 'title', 'description', 'bodyText', 'polls') 
 
                
     # title = serializers.CharField(max_length=120)
