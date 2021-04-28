@@ -16,7 +16,7 @@ urlpatterns = [
 # urlpatterns = [
 #     url(r'^$',
 #         app.views.PollListView.as_view(
-#             queryset=Poll.objects.order_by('-pub_date')[:5],
+#             queryset=Question.objects.order_by('-poll_id'),
 #             context_object_name='latest_poll_list',
 #             template_name='app/index.html',),
 #         name='home'),
