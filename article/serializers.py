@@ -11,9 +11,14 @@ class ArticleSerializer(serializers.ModelSerializer):
 class PollSerializer(serializers.ModelSerializer):
     class Meta:
         model = Poll
-        fields = ('id', 'title, description', 'body', 'timeOfBegin') 
+        fields = ('id', 'title', 'description', 'body', 'timeOfBegin') 
 
         
+class QuestionSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Question
+        fields = ('id', 'typeQ', 'title', 'description', 'bodyText', 'bodyJson', 'polls') 
+
                
     # title = serializers.CharField(max_length=120)
     # description = serializers.CharField()
