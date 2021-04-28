@@ -5,8 +5,8 @@ from rest_framework.mixins import ListModelMixin
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from .models import Article
-from .serializers import ArticleSerializer
+from .models import Article, Poll, Question
+from .serializers import ArticleSerializer, PollSerializer, QuestionSerializer
 
 
 class ArticleView( ListModelMixin, GenericAPIView):
@@ -27,6 +27,28 @@ class ArticleView( ListModelMixin, GenericAPIView):
 class SingleArticleView(RetrieveUpdateDestroyAPIView):
     queryset = Article.objects.all()
     serializer_class = ArticleSerializer
+#############################################################################
+
+class PollView( ListModelMixin, GenericAPIView):
+    queryset= Poll.objects.all()
+    serializer_class = PollSerializer
+
+    def get(self, request, *args, **kwargs):
+
+        return self.list(request, *args, **kwargs )
+
+    # def perform_create(self, serializer):
+    #     author = get_object_or_404(Author, id=self.request.data.get('author_id'))
+    #     return serializer.save(author=author)
+
+    def post(self, request, *args, **kwargs):
+        return self.create(request, *args, **kwargs)
+
+class SinglePollView(RetrieveUpdateDestroyAPIView):
+    queryset = Poll.objects.all()
+    serializer_class = PollSerializer
+
+
 
     # def post(self, request):
     #     article = request.data.get('article')
