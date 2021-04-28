@@ -33,7 +33,7 @@ class Question(models.Model):
   title = models.CharField(max_length=120)
   description = models.TextField()
   bodyText = models.TextField()
-  bodyJson = models.JSONField()
+  bodyJson = models.JSONField(default={})
   polls = models.ManyToManyField(Poll)
 
 
