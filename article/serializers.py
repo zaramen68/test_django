@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Article, Poll, Question, Choice
+from .models import Article, Poll, Question, Choice, Answer, Respondent
 
 
 class ArticleSerializer(serializers.ModelSerializer):
@@ -24,7 +24,19 @@ class ChoiseSerializer(serializers.ModelSerializer):
         model = Choice
         fields = ('question_id', 'text', 'votes') 
 
-               
+
+class AnswerSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Answer
+        fields = ('respondent', 'question', 'answerIs')        
+
+
+class RespondentSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Respondent
+        fields = ('name', )         
+
+        
     # title = serializers.CharField(max_length=120)
     # description = serializers.CharField()
     # body = serializers.CharField()

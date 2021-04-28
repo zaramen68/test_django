@@ -5,7 +5,7 @@ from rest_framework.mixins import ListModelMixin
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from .models import Article, Poll, Question
+from .models import Article, Poll, Question, Answer, Respondent
 from .serializers import ArticleSerializer, PollSerializer, QuestionSerializer
 
 

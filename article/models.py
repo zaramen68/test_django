@@ -22,7 +22,19 @@ class Article(models.Model):
     return self.title
 
 class Question(models.Model):
-  typeQ = models.IntegerField()
+  TEXT='T'
+  SELECT_ONE ='O'
+  SELECT_SET = 'S'
+  QUESTION_TYPE_CHOICES=[
+    (TEXT, 'Text' ),
+    (SELECT_ONE, 'Select one'),
+    (SELECT_SET, 'Select_set'),
+  ]
+  typeQ = models.CharField(
+    max_length=1,
+    choices=QUESTION_TYPE_CHOICES,
+    default=TEXT
+  )
   title = models.CharField(max_length=120)
   description = models.TextField()
   # polls = models.OneToOneField(Poll, on_delete = models.SET_NULL, null=True)
@@ -67,4 +79,5 @@ class Answer(models.Model):
   respondent = models.ForeignKey('Respondent', related_name='name', on_delete=models.CASCADE)
   question = models.ForeignKey('Question', related_name='description', on_delete=models.CASCADE)
   answerIs = models.TextField(null=True)
-  
+  def __str__(self):
+      return self.answerIs
