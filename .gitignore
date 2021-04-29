@@ -16,3 +16,16 @@ test_django/__pycache__/wsgi.cpython-37.pyc
 article/__pycache__/admin.cpython-38.pyc
 article/__pycache__/models.cpython-38.pyc
 article/__pycache__/serializers.cpython-38.pyc
+article/migrations/__pycache__/__init__.cpython-37.pyc
+article/migrations/__pycache__/0001_initial.cpython-37.pyc
+article/migrations/__pycache__/0002_poll_question.cpython-37.pyc
+article/migrations/__pycache__/0003_alter_question_bodyjson.cpython-37.pyc
+article/migrations/__pycache__/0004_alter_question_bodyjson.cpython-37.pyc
+article/migrations/__pycache__/0005_remove_question_bodyjson.cpython-37.pyc
+article/migrations/__pycache__/0006_auto_20210428_0939.cpython-37.pyc
+article/migrations/__pycache__/0007_remove_question_bodytext.cpython-37.pyc
+article/migrations/__pycache__/0008_auto_20210428_1201.cpython-37.pyc
+article/migrations/__pycache__/0009_alter_question_polls.cpython-37.pyc
+article/migrations/__pycache__/0010_alter_question_polls.cpython-37.pyc
+article/migrations/__pycache__/0011_auto_20210428_1429.cpython-37.pyc
+article/migrations/__pycache__/0012_auto_20210428_2351.cpython-37.pyc
