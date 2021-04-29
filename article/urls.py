@@ -1,6 +1,6 @@
 from django.urls import path
 
-from .views import PollView, SinglePollView
+from .views import PollView, SinglePollView, PollDetailView
 # import poll.views
 
 app_name = "articles"
@@ -8,7 +8,13 @@ app_name = "articles"
 # app_name will help us do a reverse look-up latter.
 urlpatterns = [
     path('articles/', PollView.as_view()),
-    path('articles/<int:pk>', SinglePollView.as_view())
+    path('articles/<int:pk>', PollDetailView.as_view(template_name='templates/app/polldetails.html'),
+        name='detail'),
+    # path('articles/<int:pk>', SinglePollView.as_view()),
+    # path(r'^(?P<pk>\d+)/$',
+    #     PollDetailView.as_view(
+    #         template_name='app/polldetails.html'),
+    #     name='detail'),
 ]
 
 
